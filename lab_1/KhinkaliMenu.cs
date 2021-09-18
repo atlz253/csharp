@@ -22,6 +22,9 @@ namespace lab_1
                 Console.WriteLine("1. Создать хинкали [задание параметров конструируемого объекта]");
                 Console.WriteLine("2. Досье на хинкали [вывод свойств объекта]");
                 Console.WriteLine("3. Получить идеальное соотношение хинкалей [выполнение статического метода]");
+                Console.WriteLine("4. Сварить хинкали");
+                Console.WriteLine("5. Съесть хинкали");
+                Console.WriteLine("6. Получить соотношение мяса и теста");
                 Console.WriteLine("0. Выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -34,24 +37,31 @@ namespace lab_1
                         obj = KhinkaliCreate();
                         break;
                     case 2:
-                        if (obj != null)
-                            Console.WriteLine(obj);
-                        else
-                            Console.WriteLine("У вас нет хинкалей! ахаха");
-
-                        Console.ReadLine();
+                        KhinkaliToString();
                         break;
                     case 3:
-                        int[] ratio = Khinkali.IdealRatio();
-                        Console.WriteLine($"Идеальное соотношение для хинкалей: {ratio[0]}% мяса и {ratio[1]}% теста. Такая формула позволяет остаться хинкалям сочными и не развариться из-за недостатка теста.");
-                        Console.ReadKey();
+                        IdealRatioMenu();
+                        break;
+                    case 4:
+                        CookMenu();
+                        break;
+                    case 5:
+                        EatMenu();
+                        break;
+                    case 6:
+                        RatioMenu();
+                        break;
+                    default:
+                        ErrorMenu();
                         break;
                 }
+
+                Console.ReadKey();
             }
-            
+
         }
 
-        public Khinkali KhinkaliCreate()
+        private Khinkali KhinkaliCreate()
         {
             int choice;
 
@@ -64,6 +74,7 @@ namespace lab_1
 
             if (choice == 1)
             {
+                Console.WriteLine("Я вложил в эти хинкали свою душу, шеф <3");
                 return new Khinkali();
             }
             else if (choice == 2)
@@ -95,6 +106,86 @@ namespace lab_1
             }
 
             return new Khinkali();
+        }
+
+        private void KhinkaliToString()
+        {
+            if (obj != null)
+                Console.WriteLine(obj);
+            else
+                Console.WriteLine("У вас нет хинкалей! ахаха");
+        }
+
+        private void IdealRatioMenu()
+        {
+            int[] ratio = Khinkali.IdealRatio();
+            Console.WriteLine($"Идеальное соотношение для хинкалей: {ratio[0]}% мяса и {ratio[1]}% теста. Такая формула позволяет остаться хинкалям сочными и не развариться из-за недостатка теста.");
+        }
+
+        private void CookMenu()
+        {
+            if (obj != null && obj.Exist)
+            {
+                int result = obj.Cook();
+
+                switch (result)
+                {
+                    case 0:
+                        Console.WriteLine("Хинкали сварены, шеф!");
+                        break;
+                    case 1:
+                        Console.WriteLine("Все таки это была плохая идея сварить их снова... Никто не хочет кашу из хинкалей?");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Шеф, случилось ужасное! Я не могу в это поверить! У нас закончились хинкали в холодильнике!");
+            }
+        }
+
+        private void EatMenu()
+        {
+            if (obj != null)
+            {
+                int result = obj.Eat();
+
+                switch (result)
+                {
+                    case 0:
+                        Console.WriteLine("Хинкали получились ооочень вкусные!");
+                        break;
+                    case 1:
+                        Console.WriteLine("Подождите... Я же их уже съел :(");
+                        break;
+                    case 2:
+                        Console.WriteLine("Неплохо было бы их сначала сварить)");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Что-то я начал часто забывать... Хм, вроде бы чтобы съесть хинкали их нужно слепить. Точно!");
+            }
+        }
+
+        private void ErrorMenu()
+        {
+            Console.WriteLine("Я ограничен технологиями своего времени. Новых взаимодействия с хинкалями еще не изобрели ;(");
+        }
+
+        private void RatioMenu()
+        {
+            if (obj != null && obj.Exist)
+            {
+                int[] ratio = obj.Ratio();
+
+                Console.WriteLine($"Вы определили на глаз, что соотношение хинкалей: {ratio[0]}% мяса и {ratio[1]}% теста.");
+            }
+            else
+            {
+                Console.WriteLine("Примерно 100% пустоты");
+            }
         }
     }
 }

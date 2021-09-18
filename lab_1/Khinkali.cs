@@ -94,9 +94,20 @@ namespace lab_1
             FoldNum = foldNum;
         }
 
-        public void Cook()
+        public int Cook()
         {
-            isCooked = true;
+            if (!isCooked)
+            {
+                isCooked = true;
+
+                return 0;
+            }
+            else
+            {
+                exist = false;
+
+                return 1;
+            }
         }
 
         public int Eat()
@@ -120,10 +131,10 @@ namespace lab_1
             }
         }
 
-        public double[] Ratio()
+        public int[] Ratio()
         {
-            double one = (Meat + Dough) / 100;
-            return new double[2] { Meat/one, 100 - Meat/one };
+            int one = (Meat + Dough) / 100;
+            return new int[2] { Meat/one, 100 - Meat/one };
         }
 
         static public int[] IdealRatio()
