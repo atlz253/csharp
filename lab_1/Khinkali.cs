@@ -6,29 +6,10 @@ using System.Threading.Tasks;
 
 namespace lab_1
 {
-    class Khinkali
+    class Khinkali : Flour
     {
-        private static readonly Random rnd = new Random();
-        private bool isCooked = false;
-        private bool exist = true;
         private int meat;
         private int dough;
-
-        public bool IsCooked
-        { 
-            get
-            {
-                return isCooked;
-            }
-        }
-
-        public bool Exist
-        { 
-            get
-            {
-                return exist;
-            }
-        }
 
         public int Meat 
         { 
@@ -52,83 +33,22 @@ namespace lab_1
             }
         }
 
-        public int Dough 
-        { 
-            get
-            {
-                return dough;
-            }
-
-            set
-            {
-                if (value < 100)
-                {
-                    dough = value;
-                    meat = 100 - dough;
-                }
-                else
-                {
-                    dough = 100;
-                    meat = 0;
-                }
-            }
-        }
-        public double Weight { get; set; }
         public int FoldNum { get; }
 
-        public Khinkali()
+        public Khinkali(): base()
         {
-            Weight = rnd.Next(200, 500);
             FoldNum = rnd.Next(4, 9);
             Meat = rnd.Next(50, 90);
         }
 
-        public Khinkali(int meat, double weight) : this()
+        public Khinkali(int meat, double weight) : base(weight)
         {
             Meat = meat;
-            Weight = weight;
         }
 
         public Khinkali(int meat, double weight, int foldNum) : this(meat, weight)
         {
             FoldNum = foldNum;
-        }
-
-        public int Cook()
-        {
-            if (!isCooked)
-            {
-                isCooked = true;
-
-                return 0;
-            }
-            else
-            {
-                exist = false;
-
-                return 1;
-            }
-        }
-
-        public int Eat()
-        {
-            if (isCooked && exist)
-            {
-                exist = false;
-                return 0;
-            }
-            else if (!exist)
-            {
-                return 1;
-            }
-            else if (!isCooked)
-            {
-                return 2;
-            }
-            else
-            {
-                return -1;
-            }
         }
 
         public int[] Ratio()
@@ -148,7 +68,7 @@ namespace lab_1
 
             if (!exist)
                 str += "Помянем ";
-            else if (isCooked)
+            else if (IsCooked)
                 str += "Приготовленные ";
             else
                 str += "Сырые ";

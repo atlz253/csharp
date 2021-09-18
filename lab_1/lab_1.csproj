@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Flour.cs" />
     <Compile Include="Khinkali.cs" />
     <Compile Include="KhinkaliMenu.cs" />
     <Compile Include="Program.cs" />
