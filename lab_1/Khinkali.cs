@@ -137,7 +137,7 @@ namespace lab_1
 
             if (!exist)
                 str += "Помянем ";
-            if (!isCooked)
+            else if (isCooked)
                 str += "Приготовленные ";
             else
                 str += "Сырые ";
