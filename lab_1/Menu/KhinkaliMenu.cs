@@ -1,10 +1,11 @@
-﻿using System;
+﻿using lab_1.Flour;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab_1
+namespace lab_1.Menu
 {
     class KhinkaliMenu
     {

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Flour\Flour.cs" />
     <Compile Include="Flour\Khinkali.cs" />
+    <Compile Include="Flour\Vareniki.cs" />
     <Compile Include="Menu\KhinkaliMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
