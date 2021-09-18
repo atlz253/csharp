@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Flour.cs" />
-    <Compile Include="Khinkali.cs" />
-    <Compile Include="KhinkaliMenu.cs" />
+    <Compile Include="Flour\Flour.cs" />
+    <Compile Include="Flour\Khinkali.cs" />
+    <Compile Include="Menu\KhinkaliMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
