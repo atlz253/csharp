@@ -11,6 +11,8 @@ namespace lab_1
         private static readonly Random rnd = new Random();
         private bool isCooked = false;
         private bool exist = true;
+        private int meat;
+        private int dough;
 
         public bool IsCooked
         { 
@@ -19,6 +21,7 @@ namespace lab_1
                 return isCooked;
             }
         }
+
         public bool Exist
         { 
             get
@@ -26,8 +29,50 @@ namespace lab_1
                 return exist;
             }
         }
-        public double Meat { get; set; }
-        public double Dough { get; set; }
+
+        public int Meat 
+        { 
+            get
+            {
+                return meat;
+            }
+
+            set
+            {
+                if (value > 100)
+                {
+                    meat = value;
+                    dough = 100 - value;
+                }
+                else
+                {
+                    meat = 100;
+                    dough = 0;
+                }
+            }
+        }
+
+        public int Dough 
+        { 
+            get
+            {
+                return dough;
+            }
+
+            set
+            {
+                if (value > 100)
+                {
+                    dough = value;
+                    meat = 100 - dough;
+                }
+                else
+                {
+                    dough = 100;
+                    meat = 0;
+                }
+            }
+        }
         public double Weight { get; set; }
         public int FoldNum { get; }
 
@@ -37,13 +82,13 @@ namespace lab_1
             FoldNum = rnd.Next(4, 9);
         }
 
-        public Khinkali(double meat, double weight) : this()
+        public Khinkali(int meat, double weight) : this()
         {
             Meat = meat;
             Weight = weight;
         }
 
-        public Khinkali(double meat, double weight, int foldNum) : this(meat, weight)
+        public Khinkali(int meat, double weight, int foldNum) : this(meat, weight)
         {
             FoldNum = foldNum;
         }
@@ -87,12 +132,16 @@ namespace lab_1
 
         public override string ToString()
         {
-            string str = "хинкаль весом " + Weight.ToString() + "мг";
+            string str = "";
 
-            if (!isCooked)
-                str = "приготовленный" + str;
             if (!exist)
-                str = "помянем" + str;
+                str += "Помянем ";
+            if (!isCooked)
+                str += "Приготовленные ";
+            else
+                str += "Сырые ";
+
+            str += $"хинкали весом {Weight}г [Соотношение мяса к тесту {meat}/{dough}]";
 
             return str;
         }

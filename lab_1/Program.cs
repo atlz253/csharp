@@ -10,7 +10,9 @@ namespace lab_1
     {
         static void Main(string[] args)
         {
-            
+            KhinkaliMenu menu = new KhinkaliMenu();
+
+            menu.Init();
         }
     }
 }
