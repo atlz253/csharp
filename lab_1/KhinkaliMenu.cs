@@ -19,8 +19,9 @@ namespace lab_1
                 Console.Clear();
 
                 Console.WriteLine("\"Пельмени! Хорошие пельмени это очень вкусно! На самом деле рецепт простой: много мяса, мало теста\" @ Floppa\n");
-                Console.WriteLine("1. Создать хинкали");
-                Console.WriteLine("2. Досье на хинкали");
+                Console.WriteLine("1. Создать хинкали [задание параметров конструируемого объекта]");
+                Console.WriteLine("2. Досье на хинкали [вывод свойств объекта]");
+                Console.WriteLine("3. Получить идеальное соотношение хинкалей [выполнение статического метода]");
                 Console.WriteLine("0. Выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -39,6 +40,11 @@ namespace lab_1
                             Console.WriteLine("У вас нет хинкалей! ахаха");
 
                         Console.ReadLine();
+                        break;
+                    case 3:
+                        int[] ratio = Khinkali.IdealRatio();
+                        Console.WriteLine($"Идеальное соотношение для хинкалей: {ratio[0]}% мяса и {ratio[1]}% теста. Такая формула позволяет остаться хинкалям сочными и не развариться из-за недостатка теста.");
+                        Console.ReadKey();
                         break;
                 }
             }

@@ -126,9 +126,9 @@ namespace lab_1
             return new double[2] { Meat/one, 100 - Meat/one };
         }
 
-        static public double[] IdealRatio()
+        static public int[] IdealRatio()
         {
-            return new double[2] { 80, 20 };
+            return new int[2] { 80, 20 };
         }
 
         public override string ToString()
