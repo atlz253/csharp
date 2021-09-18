@@ -39,7 +39,7 @@ namespace lab_1
 
             set
             {
-                if (value > 100)
+                if (value < 100)
                 {
                     meat = value;
                     dough = 100 - value;
@@ -61,7 +61,7 @@ namespace lab_1
 
             set
             {
-                if (value > 100)
+                if (value < 100)
                 {
                     dough = value;
                     meat = 100 - dough;
@@ -80,6 +80,7 @@ namespace lab_1
         {
             Weight = rnd.Next(200, 500);
             FoldNum = rnd.Next(4, 9);
+            Meat = rnd.Next(50, 90);
         }
 
         public Khinkali(int meat, double weight) : this()
