@@ -9,8 +9,11 @@ namespace lab_1
     class Khinkali
     {
         private static readonly Random rnd = new Random();
+        
         private bool isCooked = false;
         private bool exist = true;
+        private bool soup = false;
+        
         private int meat;
         private int dough;
 
@@ -27,6 +30,14 @@ namespace lab_1
             get
             {
                 return exist;
+            }
+        }
+
+        public bool Soup
+        {
+            get
+            {
+                return soup;
             }
         }
 
@@ -99,6 +110,7 @@ namespace lab_1
             if (!isCooked)
             {
                 isCooked = true;
+                soup = true;
 
                 return 0;
             }
@@ -131,10 +143,26 @@ namespace lab_1
             }
         }
 
-        public int[] Ratio()
+        public int Drink()
         {
-            int one = (Meat + Dough) / 100;
-            return new int[2] { Meat/one, 100 - Meat/one };
+            if (soup && exist)
+            {
+                soup = false;
+
+                return 0;
+            }
+            else if (!isCooked)
+            {
+                return 1;
+            }
+            else if (!soup)
+            {
+                return 2;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         static public int[] IdealRatio()

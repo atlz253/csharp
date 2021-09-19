@@ -23,8 +23,8 @@ namespace lab_1
                 Console.WriteLine("2. Досье на хинкали [вывод свойств объекта]");
                 Console.WriteLine("3. Получить идеальное соотношение хинкалей [выполнение статического метода]");
                 Console.WriteLine("4. Сварить хинкали");
-                Console.WriteLine("5. Съесть хинкали");
-                Console.WriteLine("6. Получить соотношение мяса и теста");
+                Console.WriteLine("5. Выпить бульон из хинкали");
+                Console.WriteLine("6. Съесть хинкали");
                 Console.WriteLine("0. Выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -46,10 +46,10 @@ namespace lab_1
                         CookMenu();
                         break;
                     case 5:
-                        EatMenu();
+                        DrinkMenu();
                         break;
                     case 6:
-                        RatioMenu();
+                        EatMenu();
                         break;
                     default:
                         ErrorMenu();
@@ -174,17 +174,28 @@ namespace lab_1
             Console.WriteLine("Я ограничен технологиями своего времени. Новых взаимодействия с хинкалями еще не изобрели ;(");
         }
 
-        private void RatioMenu()
+        private void DrinkMenu()
         {
             if (obj != null && obj.Exist)
             {
-                int[] ratio = obj.Ratio();
+                int result = obj.Drink();
 
-                Console.WriteLine($"Вы определили на глаз, что соотношение хинкалей: {ratio[0]}% мяса и {ratio[1]}% теста.");
+                switch (result)
+                {
+                    case 0:
+                        Console.WriteLine("Вы выпили вкусный бульон");
+                        break;
+                    case 1:
+                        Console.WriteLine("В сырых хинкалях нету бульона!");
+                        break;
+                    case 2:
+                        Console.WriteLine("Кто украл бульон из хинкалей?! А стоп... Я же его выпил :D");
+                        break;
+                }
             }
             else
             {
-                Console.WriteLine("Примерно 100% пустоты");
+                Console.WriteLine("Сложно есть свободу из пустой тарелки, сложно пить свободу из пустой бутылки");
             }
         }
     }
