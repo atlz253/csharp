@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab_1.Flour
+namespace lab_1.Dumplings
 {
-    class Khinkali : Flour
+    class Khinkali : Dumplings
     {
         private int meat;
         private int dough;
@@ -51,7 +51,7 @@ namespace lab_1.Flour
             FoldNum = foldNum;
         }
 
-        public int[] Ratio()
+        public int[] Ratio() // придумать какой-нибудь другой метод
         {
             int one = (Meat + Dough) / 100;
             return new int[2] { Meat/one, 100 - Meat/one };

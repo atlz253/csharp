@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab_1.Flour
+namespace lab_1.Dumplings
 {
-    abstract class Flour
+    abstract class Dumplings
     {
         protected static readonly Random rnd = new Random();
 
@@ -49,12 +49,12 @@ namespace lab_1.Flour
             }
         }
 
-        public Flour()
+        public Dumplings()
         {
             Weight = rnd.Next(200, 500);
         }
 
-        public Flour(double weight) : this()
+        public Dumplings(double weight) : this()
         {
             Weight = weight;
         }
