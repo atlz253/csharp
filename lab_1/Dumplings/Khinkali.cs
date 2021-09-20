@@ -9,7 +9,8 @@ namespace lab_1.Dumplings
     class Khinkali : Dumplings
     {
         private int meat;
-        private int dough;
+
+        private bool soup = false;
 
         public int Meat 
         { 
@@ -33,9 +34,31 @@ namespace lab_1.Dumplings
             }
         }
 
+        public override int Dough 
+        { 
+            get
+            {
+                return dough;
+            }
+
+            set
+            {
+                if (value < 100)
+                {
+                    dough = value;
+                    meat = 100 - dough;
+                }
+                else
+                {
+                    dough = 100;
+                    meat = 0;
+                }
+            }
+        }
+        
         public int FoldNum { get; }
 
-        public Khinkali(): base()
+        public Khinkali() : base()
         {
             FoldNum = rnd.Next(4, 9);
             Meat = rnd.Next(50, 90);
@@ -51,10 +74,66 @@ namespace lab_1.Dumplings
             FoldNum = foldNum;
         }
 
-        public int[] Ratio() // придумать какой-нибудь другой метод
+        public int Drink()
         {
-            int one = (Meat + Dough) / 100;
-            return new int[2] { Meat/one, 100 - Meat/one };
+            if (soup && exist)
+            {
+                soup = false;
+
+                return 0;
+            }
+            else if (!isCooked)
+            {
+                return 1;
+            }
+            else if (!soup)
+            {
+                return 2;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        public override int Cook()
+        {
+            if (!IsCooked)
+            {
+                isCooked = true;
+                soup = true;
+
+                return 0;
+            }
+            else
+            {
+                exist = false;
+
+                return 1;
+            }
+        }
+
+        public override int Eat()
+        {
+            if (IsCooked && exist)
+            {
+                exist = false;
+                soup = false;
+
+                return 0;
+            }
+            else if (!exist)
+            {
+                return 1;
+            }
+            else if (!IsCooked)
+            {
+                return 2;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         static public int[] IdealRatio()

@@ -10,14 +10,14 @@ namespace lab_1.Dumplings
     {
         protected static readonly Random rnd = new Random();
 
-        private int dough;
+        protected int dough;
 
         protected bool exist = true;
-        private bool isCooked = false;
+        protected bool isCooked = false;
 
         public double Weight { get; set; }
 
-        public int Dough
+        public virtual int Dough
         {
             get
             {
@@ -59,7 +59,7 @@ namespace lab_1.Dumplings
             Weight = weight;
         }
 
-        public int Cook()
+        public virtual int Cook()
         {
             if (!isCooked)
             {
@@ -75,7 +75,7 @@ namespace lab_1.Dumplings
             }
         }
 
-        public int Eat()
+        public virtual int Eat()
         {
             if (isCooked && exist)
             {
