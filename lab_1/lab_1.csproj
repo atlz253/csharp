@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dumplings\Dumplings.cs" />
+    <Compile Include="Dumplings\Manti.cs" />
+    <Compile Include="Dumplings\Pelmeni.cs" />
     <Compile Include="Dumplings\Vareniki.cs" />
     <Compile Include="Dumplings\Khinkali.cs" />
     <Compile Include="Menu\KhinkaliMenu.cs" />

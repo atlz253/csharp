@@ -156,5 +156,10 @@ namespace lab_1.Dumplings
 
             return str;
         }
+
+        public override string Name()
+        {
+            return base.Name() + "хинкали";
+        }
     }
 }

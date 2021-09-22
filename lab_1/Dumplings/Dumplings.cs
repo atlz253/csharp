@@ -95,5 +95,10 @@ namespace lab_1.Dumplings
                 return -1;
             }
         }
+
+        public virtual string Name()
+        {
+            return "класс пельменеобразное ";
+        }
     }
 }

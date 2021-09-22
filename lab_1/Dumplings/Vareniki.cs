@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace lab_1.Dumplings
 {
-    class Vareniki: Dumplings
+    sealed class Vareniki : Dumplings
     {
-        private char filling;
+        /* 
+        0 - варенье 
+        1 - картошка
+        2 - творог
+        */
+        private int filling;
 
-        public char Filling { get; }
+        public int Filling { get; }
 
-        Vareniki(char filling): base()
+        Vareniki(int filling): base()
         {
             this.filling = filling;
         }
@@ -20,6 +25,25 @@ namespace lab_1.Dumplings
         Vareniki(char filling, double weight): base(weight)
         {
             this.filling = filling;
+        }
+
+        public bool IsSweet()
+        {
+            switch (filling)
+            {
+                case 0:
+                case 2:
+                    return true;
+                case 1:
+                    return false;
+            }
+
+            return false;
+        }
+
+        public override string Name()
+        {
+            return base.Name() + "вареники";
         }
     }
 }
