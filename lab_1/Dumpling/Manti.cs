@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab_1.Dumplings
+namespace lab_1.Dumpling
 {
     class Manti : Dumplings
     {
@@ -18,12 +18,14 @@ namespace lab_1.Dumplings
 
         private int[] Spices { get; }
 
-        Manti(int[] spices) : base()
+        public Manti() : base() { }
+
+        public Manti(int[] spices) : base()
         {
             this.spices = spices;
         }
 
-        Manti(int[] spices, double weight) : base(weight)
+        public Manti(int[] spices, double weight) : base(weight)
         {
             this.spices = spices;
         }

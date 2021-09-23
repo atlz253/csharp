@@ -1,4 +1,4 @@
-﻿using lab_1.Dumplings;
+﻿using lab_1.Dumpling;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace lab_1.Menu
 {
-    class KhinkaliMenu
+    class KhinkaliMenu : IDumplingsMenu
     {
         private Khinkali obj = null;
 
@@ -35,7 +35,7 @@ namespace lab_1.Menu
                     case 0:
                         return;
                     case 1:
-                        obj = KhinkaliCreate();
+                        obj = (Khinkali) Create();
                         break;
                     case 2:
                         KhinkaliToString();
@@ -62,7 +62,7 @@ namespace lab_1.Menu
 
         }
 
-        private Khinkali KhinkaliCreate()
+        public Dumplings Create()
         {
             int choice;
 
@@ -145,7 +145,7 @@ namespace lab_1.Menu
             }
         }
 
-        private void EatMenu()
+        public void EatMenu()
         {
             if (obj != null)
             {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab_1.Dumplings
+namespace lab_1.Dumpling
 {
     abstract class Dumplings
     {

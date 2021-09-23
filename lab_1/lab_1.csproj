@@ -43,12 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dumplings\Dumplings.cs" />
-    <Compile Include="Dumplings\Manti.cs" />
-    <Compile Include="Dumplings\Pelmeni.cs" />
-    <Compile Include="Dumplings\Vareniki.cs" />
-    <Compile Include="Dumplings\Khinkali.cs" />
+    <Compile Include="Dumpling\Dumplings.cs" />
+    <Compile Include="Dumpling\Manti.cs" />
+    <Compile Include="Dumpling\Pelmeni.cs" />
+    <Compile Include="Dumpling\Vareniki.cs" />
+    <Compile Include="Dumpling\Khinkali.cs" />
+    <Compile Include="Menu\IDumplingsMenu.cs" />
     <Compile Include="Menu\KhinkaliMenu.cs" />
+    <Compile Include="Menu\MainMenu.cs" />
+    <Compile Include="Menu\MantiMenu.cs" />
+    <Compile Include="Menu\PelmeniMenu.cs" />
+    <Compile Include="Menu\VarenikiMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
