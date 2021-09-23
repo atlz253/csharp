@@ -11,11 +11,43 @@ namespace lab_1.Dumpling
         protected static readonly Random rnd = new Random();
 
         protected int dough;
+        protected double weight;
 
         protected bool exist = true;
         protected bool isCooked = false;
 
-        public double Weight { get; set; }
+        public double Weight 
+        { 
+            get
+            {
+                return weight;
+            }
+            
+            set
+            {
+                if (value > 0)
+                {
+                    weight = value;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("          _ ._  _ , _ ._");
+                    Console.WriteLine("        (_ ' ( `  )_  .__)");
+                    Console.WriteLine("      ( (  (    )   `)  ) _)");
+                    Console.WriteLine("     (__ (_   (_ . _) _) ,__)");
+                    Console.WriteLine("         `~~`\\ ' . /`~~`");
+                    Console.WriteLine("              ;   ;");
+                    Console.WriteLine("              /   \\");
+                    Console.WriteLine("_____________/_ __ \\_____________\n");
+                    Console.WriteLine("Были слеплены хинкали из антиматерии.");
+                    Console.WriteLine("Все живое, включая вселенную, вымерло");
+                    Console.WriteLine("Теперь вы довольны?");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                }
+            }
+        }
 
         public virtual int Dough
         {
