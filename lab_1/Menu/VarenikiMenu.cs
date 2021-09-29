@@ -19,7 +19,17 @@ namespace lab_1.Menu
             return null;
         }
 
+        public void CookMenu()
+        {
+
+        }
+
         public void EatMenu()
+        {
+
+        }
+
+        public void NameMenu()
         {
 
         }

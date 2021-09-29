@@ -26,6 +26,7 @@ namespace lab_1.Menu
                 Console.WriteLine("4. Сварить хинкали");
                 Console.WriteLine("5. Выпить бульон из хинкали");
                 Console.WriteLine("6. Съесть хинкали");
+                Console.WriteLine("7. Классифицировать хинкали");
                 Console.WriteLine("0. Выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -51,6 +52,9 @@ namespace lab_1.Menu
                         break;
                     case 6:
                         EatMenu();
+                        break;
+                    case 7:
+                        NameMenu();
                         break;
                     default:
                         ErrorMenu();
@@ -123,7 +127,7 @@ namespace lab_1.Menu
             Console.WriteLine($"Идеальное соотношение для хинкалей: {ratio[0]}% мяса и {ratio[1]}% теста. Такая формула позволяет остаться хинкалям сочными и не развариться из-за недостатка теста.");
         }
 
-        private void CookMenu()
+        public void CookMenu()
         {
             if (obj != null && obj.Exist)
             {
@@ -198,6 +202,14 @@ namespace lab_1.Menu
             {
                 Console.WriteLine("Сложно есть свободу из пустой тарелки, сложно пить свободу из пустой бутылки");
             }
+        }
+
+        public void NameMenu()
+        {
+            if (obj != null)
+                Console.WriteLine(obj.Name());
+            else
+                Console.WriteLine("Призрачные хинкали. УУУУУ. Страшно?");
         }
     }
 }

@@ -22,6 +22,9 @@ namespace lab_1.Menu
                 Console.WriteLine("А чем манты отличаются от хинкалей?! Ну ладно... Добавим специй)");
                 Console.WriteLine("1. создать манты");
                 Console.WriteLine("2. глянуть на манты");
+                Console.WriteLine("3. сварить манты");
+                Console.WriteLine("4. съесть манты");
+                Console.WriteLine("5. классифицировать манты");
                 Console.WriteLine("0. выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -38,6 +41,15 @@ namespace lab_1.Menu
                     case 2:
                         MantiToString();
                         break;
+                    case 3:
+                        CookMenu();
+                        break;
+                    case 4:
+                        EatMenu();
+                        break;
+                    case 5:
+                        NameMenu();
+                        break;
                 }
 
                 Console.ReadKey();
@@ -52,7 +64,6 @@ namespace lab_1.Menu
             Console.WriteLine("Ваши поручения, шеф:");
             Console.WriteLine("1. вложи в эти манты свою душу");
             Console.WriteLine("2. я подберу приправы и вес");
-            Console.WriteLine("3. отойди от плиты, я все сделаю самостоятельно");
 
             int.TryParse(Console.ReadLine(), out choice);
 
@@ -144,23 +155,8 @@ namespace lab_1.Menu
 
                 return new Manti(weight, salt, pepper, paprika, karri);
             }
-            else if (choice == 3)
-            {
-                int meat;
-                double weight;
-                int foldNum;
 
-                Console.Write("Вы подошли к рабочему месту и готовы творить. После недолгих раздумий вы решаете сделать процент мяса по отшношению к тесту: ");
-                int.TryParse(Console.ReadLine(), out meat);
-                Console.Write("Вы представляете размер вашего творения, предположительно он будет весить:");
-                double.TryParse(Console.ReadLine(), out weight);
-                Console.Write("Вы - истинный шеф повар. После 10 лет обучения в одном храме Пекина вы познали дзен и секретную формулу хинкалей \"дракона\", у которых складок ровно:");
-                int.TryParse(Console.ReadLine(), out foldNum);
-
-                return new Khinkali(meat, weight, foldNum);
-            }
-
-            return new Khinkali();
+            return new Manti();
         }
 
         public void MantiToString()
@@ -171,9 +167,41 @@ namespace lab_1.Menu
                 Console.WriteLine("У вас нет мант... мантов.... манты?");
         }
 
+        public void CookMenu()
+        {
+            switch (obj.Cook())
+            {
+                case 0:
+                    Console.WriteLine("Манты сварены и поданы на стол!");
+                    break;
+                case 1:
+                    Console.WriteLine("Манты разварились! О нет!");
+                    break;
+            }
+        }
+
         public void EatMenu()
         {
+            switch (obj.Eat())
+            {
+                case 0:
+                    Console.WriteLine("Вы съели манты. Не хинкали... Эх, но все же вкусно)");
+                    break;
+                case 1:
+                    Console.WriteLine("Ваши манты не существуют!");
+                    break;
+                case 2:
+                    Console.WriteLine("Никто не захотел есть сырые манты!");
+                    break;
+            }
+        }
 
+        public void NameMenu()
+        {
+            if (obj != null)
+                Console.WriteLine(obj.Name());
+            else
+                Console.WriteLine("А точно ли это манты? Ты указываешь на пустой стол...");
         }
     }
 }

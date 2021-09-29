@@ -14,6 +14,10 @@ namespace lab_1.Menu
 
         Dumplings Create();
 
+        void CookMenu();
+
         void EatMenu();
+
+        void NameMenu();
     }
 }

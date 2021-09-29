@@ -13,8 +13,6 @@ namespace lab_1.Dumpling
         private bool paprika;
         private bool karri;
 
-        private int[] Spices { get; }
-
         public Manti() : base() 
         {
             salt = rnd.Next(100) <= 50;
@@ -38,7 +36,12 @@ namespace lab_1.Dumpling
 
         public override string ToString()
         {
-            string str = "манты ";
+            string str = "";
+
+            if (!exist)
+                str += "помянем ";
+
+            str += "манты ";
 
             if (salt)
                 str += "соленые ";
