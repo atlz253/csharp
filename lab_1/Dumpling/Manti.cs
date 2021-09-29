@@ -8,44 +8,48 @@ namespace lab_1.Dumpling
 {
     class Manti : Dumplings
     {
-        /*
-            0. соль
-            1. перец
-            2. паприка
-            3. карри
-        */
-        private int[] spices;
+        private bool salt;
+        private bool pepper;
+        private bool paprika;
+        private bool karri;
 
         private int[] Spices { get; }
 
-        public Manti() : base() { }
-
-        public Manti(int[] spices) : base()
+        public Manti() : base() 
         {
-            this.spices = spices;
+            salt = rnd.Next(100) <= 50;
+            pepper = rnd.Next(100) <= 50;
+            paprika = rnd.Next(100) <= 50;
+            karri = rnd.Next(100) <= 50;
         }
 
-        public Manti(int[] spices, double weight) : base(weight)
+        public Manti(double weight, bool salt, bool pepper, bool paprika, bool karri) : base(weight) 
         {
-            this.spices = spices;
-        }
-
-        public bool IsHot()
-        {
-            foreach(int spice in spices)
-                switch (spice)
-                {
-                    case 1:
-                    case 3:
-                        return true;
-                }
-
-            return false;
+            this.salt = salt;
+            this.pepper = pepper;
+            this.paprika = paprika;
+            this.karri = karri;
         }
 
         public override string Name()
         {
             return base.Name() + "манты";
+        }
+
+        public override string ToString()
+        {
+            string str = "манты ";
+
+            if (salt)
+                str += "соленые ";
+            if (pepper)
+                str += "перченые ";
+            if (paprika)
+                str += "с добавлением папрки ";
+            if (karri)
+                str += "с подсыпанным карри ";
+
+            return str;
         }
     }
 }
