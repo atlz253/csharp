@@ -175,6 +175,9 @@ namespace lab_1.Menu
                     Console.WriteLine("Манты сварены и поданы на стол!");
                     break;
                 case 1:
+                    Console.WriteLine("Где манты, Билли? Где мааанты?");
+                    break;
+                case 2:
                     Console.WriteLine("Манты разварились! О нет!");
                     break;
             }

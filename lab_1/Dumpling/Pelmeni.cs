@@ -9,22 +9,17 @@ namespace lab_1.Dumpling
     class Pelmeni : Dumplings
     {
         /*
-            0. свинина
-            1. говядина
-            2. курица
-            3. индейка    
+            1. свинина
+            2. говядина
+            3. курица
+            4. индейка    
         */
         private int meatType;
         private bool isFried = false;
 
         public int MeatType { get; }
 
-        Pelmeni(int meatType) : base()
-        {
-            this.meatType = meatType;
-        }
-
-        Pelmeni(int meatType, double weight) : base(weight)
+        public Pelmeni(int meatType) : base()
         {
             this.meatType = meatType;
         }

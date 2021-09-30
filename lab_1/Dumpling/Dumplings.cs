@@ -93,17 +93,21 @@ namespace lab_1.Dumpling
 
         public virtual int Cook()
         {
-            if (!isCooked)
+            if (!isCooked && exist)
             {
                 isCooked = true;
 
                 return 0;
             }
-            else
+            else if (isCooked)
             {
                 exist = false;
 
                 return 1;
+            }
+            else
+            {
+                return -1;
             }
         }
 
