@@ -26,6 +26,7 @@ namespace lab_1.Menu
                 Console.WriteLine("4. пожарить пельмени");
                 Console.WriteLine("5. съесть пельмени");
                 Console.WriteLine("6. имя класса");
+                Console.WriteLine("7. узнать тип мяса");
                 Console.WriteLine("0. выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -54,6 +55,9 @@ namespace lab_1.Menu
                     case 6:
                         ClassMenu();
                         break;
+                    case 7:
+                        TypeMenu();
+                        break;
                 }
 
                 Console.ReadKey();
@@ -74,7 +78,7 @@ namespace lab_1.Menu
 
                 int.TryParse(Console.ReadLine(), out choice);
                 
-                if (choice >= 0 && choice <= 3)
+                if (choice >= 1 && choice <= 3)
                     return new Pelmeni(choice);
             }
         }
@@ -138,6 +142,28 @@ namespace lab_1.Menu
                 Console.WriteLine(obj.ToString());
             else
                 Console.WriteLine("Ладно, храни свои секреты!");
+        }
+
+        public void TypeMenu()
+        {
+            if (obj != null)
+                switch (obj.MeatType)
+                {
+                    case 1:
+                        Console.WriteLine("Свинина");
+                        break;
+                    case 2:
+                        Console.WriteLine("Говядина");
+                        break;
+                    case 3:
+                        Console.WriteLine("Курица");
+                        break;
+                    case 4:
+                        Console.WriteLine("Индейка");
+                        break;
+                }
+            else
+                Console.WriteLine("Void");
         }
     }
 }

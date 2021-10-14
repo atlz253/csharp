@@ -25,6 +25,7 @@ namespace lab_1.Menu
                 Console.WriteLine("4. съесть вареники");
                 Console.WriteLine("5. сладкая ли начинка?");
                 Console.WriteLine("6. имя класса");
+                Console.WriteLine("7. узнать начинку");
                 Console.WriteLine("0. выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -52,6 +53,9 @@ namespace lab_1.Menu
                         break;
                     case 6:
                         ClassMenu();
+                        break;
+                    case 7:
+                        FillMenu();
                         break;
                 }
 
@@ -131,6 +135,25 @@ namespace lab_1.Menu
                 Console.WriteLine(obj.ToString());
             else
                 Console.WriteLine("Ладно, храни свои секреты!");
+        }
+
+        public void FillMenu()
+        {
+            if (obj != null)
+                switch (obj.Filling)
+                {
+                    case 1:
+                        Console.WriteLine("Варенье");
+                        break;
+                    case 2:
+                        Console.WriteLine("Картошка");
+                        break;
+                    case 3:
+                        Console.WriteLine("Творог");
+                        break;
+                }
+            else
+                Console.WriteLine("Void");
         }
     }
 }

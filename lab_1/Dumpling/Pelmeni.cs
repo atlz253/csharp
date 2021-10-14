@@ -17,7 +17,13 @@ namespace lab_1.Dumpling
         private int meatType;
         private bool isFried = false;
 
-        public int MeatType { get; }
+        public int MeatType 
+        { 
+            get
+            {
+                return meatType;
+            }
+        }
 
         public Pelmeni(int meatType) : base()
         {
