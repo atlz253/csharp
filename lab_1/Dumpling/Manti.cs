@@ -13,6 +13,14 @@ namespace lab_1.Dumpling
         private bool paprika;
         private bool karri;
 
+        public bool Salt 
+        { 
+            get
+            {
+                return salt;
+            }
+        }
+
         public Manti() : base() 
         {
             salt = rnd.Next(100) <= 50;
