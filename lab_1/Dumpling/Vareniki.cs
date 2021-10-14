@@ -9,20 +9,26 @@ namespace lab_1.Dumpling
     sealed class Vareniki : Dumplings
     {
         /* 
-        0 - варенье 
-        1 - картошка
-        2 - творог
+        1 - варенье 
+        2 - картошка
+        3 - творог
         */
         private int filling;
 
-        public int Filling { get; }
+        public int Filling 
+        { 
+            get
+            {
+                return filling;
+            }
+        }
 
-        Vareniki(int filling): base()
+        public Vareniki(int filling): base()
         {
             this.filling = filling;
         }
 
-        Vareniki(char filling, double weight): base(weight)
+        public Vareniki(char filling, double weight): base(weight)
         {
             this.filling = filling;
         }
@@ -31,10 +37,10 @@ namespace lab_1.Dumpling
         {
             switch (filling)
             {
-                case 0:
-                case 2:
-                    return true;
                 case 1:
+                case 3:
+                    return true;
+                case 2:
                     return false;
             }
 
