@@ -19,5 +19,7 @@ namespace lab_1.Menu
         void EatMenu();
 
         void NameMenu();
+
+        void ClassMenu();
     }
 }

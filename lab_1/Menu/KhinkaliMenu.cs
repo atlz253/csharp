@@ -211,5 +211,10 @@ namespace lab_1.Menu
             else
                 Console.WriteLine("Призрачные хинкали. УУУУУ. Страшно?");
         }
+
+        public void ClassMenu()
+        {
+            NameMenu();
+        }
     }
 }

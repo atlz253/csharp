@@ -25,6 +25,7 @@ namespace lab_1.Menu
                 Console.WriteLine("3. сварить пельмени");
                 Console.WriteLine("4. пожарить пельмени");
                 Console.WriteLine("5. съесть пельмени");
+                Console.WriteLine("6. имя класса");
                 Console.WriteLine("0. выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -49,6 +50,9 @@ namespace lab_1.Menu
                         break;
                     case 5:
                         EatMenu();
+                        break;
+                    case 6:
+                        ClassMenu();
                         break;
                 }
 
@@ -126,6 +130,14 @@ namespace lab_1.Menu
                     Console.WriteLine("Хорошо бы их приготовить...");
                     break;
             }
+        }
+
+        public void ClassMenu()
+        {
+            if (obj != null)
+                Console.WriteLine(obj.ToString());
+            else
+                Console.WriteLine("Ладно, храни свои секреты!");
         }
     }
 }

@@ -25,6 +25,7 @@ namespace lab_1.Menu
                 Console.WriteLine("3. сварить манты");
                 Console.WriteLine("4. съесть манты");
                 Console.WriteLine("5. классифицировать манты");
+                Console.WriteLine("6. имя класса");
                 Console.WriteLine("0. выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -49,6 +50,9 @@ namespace lab_1.Menu
                         break;
                     case 5:
                         NameMenu();
+                        break;
+                    case 6:
+                        ClassMenu();
                         break;
                 }
 
@@ -205,6 +209,14 @@ namespace lab_1.Menu
                 Console.WriteLine(obj.Name());
             else
                 Console.WriteLine("А точно ли это манты? Ты указываешь на пустой стол...");
+        }
+
+        public void ClassMenu()
+        {
+            if (obj != null)
+                Console.WriteLine(obj.ToString());
+            else
+                Console.WriteLine("Ладно, храни свои секреты!");
         }
     }
 }
