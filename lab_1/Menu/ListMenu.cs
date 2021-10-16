@@ -18,11 +18,13 @@ namespace lab_1.Menu
 
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine("1. Добавить элемент в список");
                 Console.WriteLine("2. Вывод свойств объекта из списка");
-                Console.WriteLine("3. Выполнение методов объекта из списка");
-                Console.WriteLine("4. Вывод объектов списка");
-                Console.WriteLine("5. Без разницы что, дайте мне это съесть!");
+                Console.WriteLine("3. Приготовить что-то из списка");
+                Console.WriteLine("4. Съесть что-то из списка");
+                Console.WriteLine("5. Вывод объектов списка");
+                Console.WriteLine("6. Угостить друга");
                 Console.WriteLine("0. Выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -36,6 +38,18 @@ namespace lab_1.Menu
                         break;
                     case 2:
                         PropertyMenu();
+                        break;
+                    case 3:
+                        CookMenu();
+                        break;
+                    case 4:
+                        EatMenu();
+                        break;
+                    case 5:
+                        ObjectsMenu();
+                        break;
+                    case 6:
+                        FriendMenu();
                         break;
                 }
 
@@ -77,10 +91,107 @@ namespace lab_1.Menu
 
         public void PropertyMenu()
         {
+            int index;
+
+            Console.Write("Введите индекс объекта: ");
+
+            int.TryParse(Console.ReadLine(), out index);
+
+            try
+            {
+                list[index].Info();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Введен неверный индекс!");
+            }
+        }
+
+        public void InfoMenu()
+        {
+            int index;
+
+            Console.Write("Введите индекс объекта: ");
+
+            int.TryParse(Console.ReadLine(), out index);
+
+            try
+            {
+                list[index].Info();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Введен неверный индекс!");
+            }
+        }
+
+        public void CookMenu()
+        {
+            int index;
+
+            Console.Write("Введите индекс объекта: ");
+
+            int.TryParse(Console.ReadLine(), out index);
+
+            try
+            {
+                list[index].Cook();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Введен неверный индекс!");
+            }
+        }
+
+        public void EatMenu()
+        {
+            int index;
+
+            Console.Write("Введите индекс объекта: ");
+
+            int.TryParse(Console.ReadLine(), out index);
+
+            try
+            {
+                list[index].Eat();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Введен неверный индекс!");
+            }
+        }
+
+        public void ObjectsMenu()
+        {
             foreach (IEatable item in list)
             {
                 item.Info();
                 Console.Write("\n");
+            }
+        }
+
+        public void ProzhorliviyDrug(IEatable eda)
+        {
+            Console.WriteLine("Я создам идеальное общество, где никто не будет голодным!");
+            eda.Cook();
+            eda.Eat();
+        }
+
+        public void FriendMenu()
+        {
+            int index;
+
+            Console.Write("Введите индекс объекта, которым угостим друга: ");
+
+            int.TryParse(Console.ReadLine(), out index);
+
+            try
+            {
+                ProzhorliviyDrug(list[index]);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Введен неверный индекс!");
             }
         }
     }

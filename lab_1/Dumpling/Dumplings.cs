@@ -135,7 +135,7 @@ namespace lab_1.Dumpling
 
         public virtual string Name()
         {
-            return "класс пельменеобразное ";
+            return "класс пельменеобразные ";
         }
 
         public virtual void Info()
@@ -149,7 +149,7 @@ namespace lab_1.Dumpling
 
         public override string ToString()
         {
-            return "Пельменеобразное";
+            return "Пельменеобразные";
         }
     }
 }

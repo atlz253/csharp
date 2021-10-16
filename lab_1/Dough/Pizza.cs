@@ -37,9 +37,11 @@ namespace lab_1.Dough
             return 0;
         }
 
-        public void Bake()
+        public int Cook()
         {
             Console.WriteLine("Пицца готова!");
+
+            return 0;
         }
 
         public override string ToString()
