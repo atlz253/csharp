@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dough\IEatable.cs" />
+    <Compile Include="Dough\Pizza.cs" />
     <Compile Include="Dumpling\Dumplings.cs" />
     <Compile Include="Dumpling\Manti.cs" />
     <Compile Include="Dumpling\Pelmeni.cs" />
