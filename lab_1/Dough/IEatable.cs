@@ -8,6 +8,8 @@ namespace lab_1.Dough
 {
     interface IEatable
     {
+        int Dough { get; set; }
         int Eat();
+        void Info();
     }
 }

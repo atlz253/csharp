@@ -52,6 +52,7 @@
     <Compile Include="Dumpling\Khinkali.cs" />
     <Compile Include="Menu\IDumplingsMenu.cs" />
     <Compile Include="Menu\KhinkaliMenu.cs" />
+    <Compile Include="Menu\ListMenu.cs" />
     <Compile Include="Menu\MainMenu.cs" />
     <Compile Include="Menu\MantiMenu.cs" />
     <Compile Include="Menu\PelmeniMenu.cs" />

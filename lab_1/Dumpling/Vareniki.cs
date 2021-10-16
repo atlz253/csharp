@@ -9,9 +9,9 @@ namespace lab_1.Dumpling
     sealed class Vareniki : Dumplings
     {
         /* 
-        1 - варенье 
-        2 - картошка
-        3 - творог
+            1 - варенье 
+            2 - картошка
+            3 - творог
         */
         private int filling;
 
@@ -21,6 +21,11 @@ namespace lab_1.Dumpling
             {
                 return filling;
             }
+        }
+
+        public Vareniki() : base()
+        {
+            this.filling = rnd.Next(1, 3);
         }
 
         public Vareniki(int filling): base()
@@ -50,6 +55,33 @@ namespace lab_1.Dumpling
         public override string Name()
         {
             return base.Name() + "вареники";
+        }
+
+        public override void Info()
+        {
+            base.Info();
+
+            string str = "";
+
+            switch (Filling)
+            {
+                case 1:
+                    str = "варенье";
+                    break;
+                case 2:
+                    str = "картошка";
+                    break;
+                case 3:
+                    str = "творог";
+                    break;
+            }
+
+            Console.WriteLine(str);
+        }
+
+        public override string ToString()
+        {
+            return "Вареники";
         }
     }
 }

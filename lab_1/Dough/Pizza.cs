@@ -8,26 +8,26 @@ namespace lab_1.Dough
 {
     public class Pizza : IEatable
     {
-        public int Diameter { get; set; }
+        public int Dough { get; set; }
         public int PriceOfPizza { get; set; }
 
-
+        public Pizza()
+        {
+            Dough = 25;
+            PriceOfPizza = 100;
+        }
 
         public Pizza(int ObjDiameter, int ObjPrice)
         {
-            Diameter = ObjDiameter;
+            Dough = ObjDiameter;
             PriceOfPizza = ObjPrice;
         }
 
         public void Info()
         {
-            Console.WriteLine($"Диаметр пиццы = {Diameter}");
+            Console.WriteLine(this);
+            Console.WriteLine($"Диаметр пиццы = {Dough}");
             Console.WriteLine($"Цена = {PriceOfPizza}");
-        }
-
-        public override string ToString()
-        {
-            return "{PriceOFPizza}";
         }
 
         public int Eat()
@@ -40,6 +40,11 @@ namespace lab_1.Dough
         public void Bake()
         {
             Console.WriteLine("Пицца готова!");
+        }
+
+        public override string ToString()
+        {
+            return "Пицца";
         }
     }
 }

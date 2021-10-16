@@ -44,12 +44,14 @@ namespace lab_1.Dumpling
 
         public override string ToString()
         {
+            return "Манты";
+        }
+
+        public override void Info()
+        {
+            base.Info();
+
             string str = "";
-
-            if (!exist)
-                str += "помянем ";
-
-            str += "манты ";
 
             if (salt)
                 str += "соленые ";
@@ -60,7 +62,7 @@ namespace lab_1.Dumpling
             if (karri)
                 str += "с подсыпанным карри ";
 
-            return str;
+            Console.WriteLine(str);
         }
     }
 }

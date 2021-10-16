@@ -116,7 +116,7 @@ namespace lab_1.Menu
         private void KhinkaliToString()
         {
             if (obj != null)
-                Console.WriteLine(obj);
+                obj.Info();
             else
                 Console.WriteLine("У вас нет хинкалей! ахаха");
         }

@@ -143,23 +143,19 @@ namespace lab_1.Dumpling
 
         public override string ToString()
         {
-            string str = "";
-
-            if (!exist)
-                str += "Помянем ";
-            else if (IsCooked)
-                str += "Приготовленные ";
-            else
-                str += "Сырые ";
-
-            str += $"хинкали весом {Weight}г [Соотношение мяса к тесту {meat}/{dough}]";
-
-            return str;
+            return "Хинкали";
         }
 
         public override string Name()
         {
             return base.Name() + "хинкали";
+        }
+
+        public override void Info()
+        {
+            base.Info();
+            Console.WriteLine($"% мяса: {Meat}");
+            Console.WriteLine($"Кол-во складок: {FoldNum}");
         }
     }
 }

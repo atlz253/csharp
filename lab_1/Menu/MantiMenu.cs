@@ -170,7 +170,7 @@ namespace lab_1.Menu
         public void MantiToString()
         {
             if (obj != null)
-                Console.WriteLine(obj);
+                obj.Info();
             else
                 Console.WriteLine("У вас нет мант... мантов.... манты?");
         }

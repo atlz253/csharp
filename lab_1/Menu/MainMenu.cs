@@ -21,6 +21,7 @@ namespace lab_1.Menu
                 Console.WriteLine("2. манты");
                 Console.WriteLine("3. пельмени");
                 Console.WriteLine("4. вареники");
+                Console.WriteLine("5. я составлю список");
                 Console.WriteLine("0. выход");
 
                 int.TryParse(Console.ReadLine(), out choice);
@@ -38,6 +39,9 @@ namespace lab_1.Menu
                         break;
                     case 4:
                         new VarenikiMenu().Init();
+                        break;
+                    case 5:
+                        new ListMenu().Init();
                         break;
                     case 0:
                         return;

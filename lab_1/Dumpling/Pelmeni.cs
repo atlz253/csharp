@@ -25,6 +25,11 @@ namespace lab_1.Dumpling
             }
         }
 
+        public Pelmeni() : base()
+        {
+            this.meatType = rnd.Next(1, 4);
+        }
+
         public Pelmeni(int meatType) : base()
         {
             this.meatType = meatType;
@@ -38,6 +43,36 @@ namespace lab_1.Dumpling
         public override string Name()
         {
             return base.Name() + "пельмени";
+        }
+
+        public override void Info()
+        {
+            base.Info();
+
+            string str = "";
+
+            switch (MeatType)
+            {
+                case 1:
+                    str = "свинина";
+                    break;
+                case 2:
+                    str = "говядина";
+                    break;
+                case 3:
+                    str = "курица";
+                    break;
+                case 4:
+                    str = "индейка";
+                    break;
+            }
+
+            Console.WriteLine(str);
+        }
+
+        public override string ToString()
+        {
+            return "Пельмени";
         }
     }
 }
