@@ -34,7 +34,7 @@ namespace lab_2
 
                 foreach (Sportsmen man in list)
                 {
-                    temp_string = man.LastName + ' ' + man.Gender + ' ' + man.Sport + ' ' + man.BirthdayYear + ' ' + man.Hight;
+                    temp_string = man.LastName + ' ' + man.Gender + ' ' + man.Sport + ' ' + man.BirthdayYear + ' ' + man.Height;
                     temp[i] = temp_string;
                     i++;
                 }

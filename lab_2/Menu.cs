@@ -61,7 +61,7 @@ namespace lab_2
 
             foreach (Sportsmen item in list)
             {
-                Console.WriteLine($"║   {count,-4}║    {item.LastName,-11} ║     {item.Gender,-8} ║   {item.Sport,-11}  ║  {item.BirthdayYear,-12}  ║     {item.Hight,-7}  ║");
+                Console.WriteLine($"║   {count,-4}║    {item.LastName,-11} ║     {item.Gender,-8} ║   {item.Sport,-11}  ║  {item.BirthdayYear,-12}  ║     {item.Height,-7}  ║");
 
                 if (item != list.Last())
                     Console.WriteLine("╠═══════╬════════════════╬══════════════╬════════════════╬════════════════╬══════════════╣");
@@ -215,13 +215,13 @@ namespace lab_2
                     break;
 
                 case 5:
-                    Console.WriteLine($"Текущее значение: {temp_man.Hight}");
+                    Console.WriteLine($"Текущее значение: {temp_man.Height}");
                     Console.WriteLine("Введите новое значение: ");
                     do
                     {
                         try
                         {
-                            temp_man.Hight = int.Parse(Console.ReadLine());
+                            temp_man.Height = int.Parse(Console.ReadLine());
                             break;
                         }
                         catch
@@ -259,12 +259,12 @@ namespace lab_2
 
             foreach (Sportsmen man in list)
             {
-                if (man.Sport.ToLower() == "плавание" && man.Hight > hightestSwimmer.Hight)
+                if (man.Sport.ToLower() == "плавание" && man.Height > hightestSwimmer.Height)
                 {
                     hightestSwimmer = man;
                 }
             }
-            if (hightestSwimmer.Hight == 0)
+            if (hightestSwimmer.Height == 0)
                 return null;
             return hightestSwimmer;
         }
@@ -298,7 +298,7 @@ namespace lab_2
                     if (GetHighestSwimmer(list) != null)
                     {
                         Console.WriteLine("Самый высокий пловец:");
-                        Console.WriteLine($"{GetHighestSwimmer(list).Value.LastName},  Рост: {GetHighestSwimmer(list).Value.Hight}");
+                        Console.WriteLine($"{GetHighestSwimmer(list).Value.LastName},  Рост: {GetHighestSwimmer(list).Value.Height}");
                     }
                     Console.ReadKey();
                     Console.Clear();

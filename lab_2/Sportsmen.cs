@@ -12,7 +12,7 @@ namespace lab_2
         public string Gender { get; set; }
         public string Sport { get; set; }
         public int BirthdayYear { get; set; }
-        public int Hight { get; set; }
+        public int Height { get; set; }
 
         public Sportsmen(string[] data)
         {
@@ -34,14 +34,14 @@ namespace lab_2
 
             try
             {
-                Hight = int.Parse(data[4]);
+                Height = int.Parse(data[4]);
             }
             catch
             {
                 Console.WriteLine("Произошла считать рост!");
                 Console.ReadKey();
 
-                Hight = 0;
+                Height = 0;
             }
         }
 
@@ -71,7 +71,7 @@ namespace lab_2
             {
                 try
                 {
-                    Hight = int.Parse(Console.ReadLine());
+                    Height = int.Parse(Console.ReadLine());
                     break;
                 }
                 catch
