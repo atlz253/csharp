@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace lab_1.Dumpling
 {
-    abstract class Dumplings : IEatable
+    abstract class Dumplings: IEatable
     {
         protected static readonly Random rnd = new Random();
 
@@ -135,21 +135,12 @@ namespace lab_1.Dumpling
 
         public virtual string Name()
         {
-            return "класс пельменеобразные ";
+            return "класс пельменеобразное ";
         }
 
         public virtual void Info()
         {
-            Console.WriteLine(Name());
-            Console.WriteLine(exist ? "Слепленные" : "Съеденные");
-            Console.WriteLine(IsCooked ? "Приготовленные" : "Сырые");
-            Console.WriteLine($"Вес: {Weight}г");
-            Console.WriteLine($"% теста: {dough}");
-        }
 
-        public override string ToString()
-        {
-            return "Пельменеобразные";
         }
     }
 }
