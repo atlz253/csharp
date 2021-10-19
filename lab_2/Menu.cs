@@ -276,7 +276,7 @@ namespace lab_2
 
             foreach (Sportsmen man in list)
             {
-                if ((currentYear - man.BirthdayYear) <= 17 && (currentYear - man.BirthdayYear) >= 14)
+                if ((currentYear - man.BirthdayYear) <= 17 && (currentYear - man.BirthdayYear) >= 14 && man.Gender.ToLower() == "женский")
                 {
                     juniorList.AddLast(man);
                 }
